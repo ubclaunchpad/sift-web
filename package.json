@@ -1,0 +1,55 @@
+{
+  "name": "sift-web",
+  "version": "1.0.0",
+  "description": "Web frontend for the Sift app",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --hot",
+    "eslint": "eslint src",
+    "jest": "jest",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ubclaunchpad/sift-web.git"
+  },
+  "keywords": [
+    "nlp",
+    "feedback",
+    "reviews"
+  ],
+  "author": "UBC Launch Pad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ubclaunchpad/sift-web/issues"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  },
+  "homepage": "https://github.com/ubclaunchpad/sift-web",
+  "dependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-class-properties": "^6.16.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.0.0",
+    "babel-jest": "^15.0.0",
+    "coveralls": "^2.11.14",
+    "eslint": "^3.7.0",
+    "eslint-config-ubclaunchpad": "^2.0.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-react": "^6.3.0",
+    "jest": "^15.1.1",
+    "webpack-dev-server": "^1.16.1"
+  }
+}
