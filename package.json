@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "coverage": "jest --coverage",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls && rm -rf coverage",
     "dev": "webpack-dev-server --hot",
     "eslint": "eslint src",
     "jest": "jest",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run jest"
   },
   "repository": {
     "type": "git",
