@@ -1,4 +1,4 @@
-import Hello from './sample/Hello';
+import Hello from './components/sample/Hello';
 import React from 'react';
 import ReactDOM from 'react-dom';
 

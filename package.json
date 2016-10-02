@@ -10,7 +10,7 @@
     "dev": "webpack-dev-server --hot",
     "eslint": "eslint src",
     "jest": "jest",
-    "test": "npm run jest"
+    "test": "npm run build && npm run jest && npm run eslint"
   },
   "repository": {
     "type": "git",
