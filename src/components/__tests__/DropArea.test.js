@@ -4,9 +4,9 @@ import {shallow} from 'enzyme';
 
 describe('<DropArea />', () => {
 
-	it('should render a button', () => {
-		const wrapper = shallow(<DropArea />);
-		expect(wrapper.find('DropArea').length).toEqual(1);
+	it('should render DropArea', () => {
+		const wrapper = shallow(<DropArea/>);
+		expect(wrapper.find('Dropzone').length).toEqual(1);
 	});
   // probably should render a button.
 
