@@ -1,5 +1,5 @@
-import DropArea from './components/DropArea';
+import Button from './components/Button';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<DropArea/>, document.getElementById('app'));
+ReactDOM.render(<Button />, document.getElementById('app'));
