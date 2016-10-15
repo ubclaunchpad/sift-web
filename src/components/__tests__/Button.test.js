@@ -12,4 +12,5 @@ describe('<Button />', () => {
 		const wrapper = shallow(<Button />);
 		expect(wrapper.find('p').length).toEqual(1);
 	});
+
 });

@@ -1,4 +1,5 @@
+import Button from './components/Button';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<Button isDisabled=false />, document.getElementById('app'));
+ReactDOM.render(<Button />, document.getElementById('app'));
