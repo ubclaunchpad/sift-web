@@ -1,4 +1,4 @@
-import Button from './../Button';
+import Button from './../ButtonZ';
 import React from 'react';
 import {shallow} from 'enzyme';
 
