@@ -5,7 +5,7 @@ class Button extends Component {
 	static displayName = 'Button';
 
 	static propTypes = {
-		isDisabled: PropTypes.bool
+		isDisabled: React.PropTypes.bool
 	};
 
 	static defaultProps = {
@@ -24,8 +24,10 @@ class Button extends Component {
 	}
 
 	_onClick = () => {
-		if (this.PropTypes.isDisabled){
-			console.log('Upload a file first');
+		if (this.propTypes.isDisabled){
+			<div>
+				<p>Upload a file first.</p>
+			</div>
 		} else {
 			// Upload file
 		}
