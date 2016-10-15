@@ -1,5 +1,5 @@
-import Hello from './components/sample/Hello';
+import DropArea from './components/DropArea';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<Hello name="Albert Einstein" />, document.getElementById('app'));
+ReactDOM.render(<DropArea/>, document.getElementById('app'));
