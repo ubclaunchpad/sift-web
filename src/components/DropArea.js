@@ -23,9 +23,10 @@ class DropArea extends Component {
 						Open Dropzone
 					</button>
 					{this.state && this.state.files && this.state.files.length > 0 ? <div>
-						<h2>Uploading {this.state.files.length} files...</h2>
-						<div>{this.state.files.map(file => <img src={file.preview} /> )}</div>
-					</div> : null}
+						<h2> Uploading {this.state.files.length} files...</h2>
+						<div> {this.state.files.map(file => <img src={file.preview} /> )}</div>
+					</div>
+					: null}
 				</DropZone>
 			</div>
 		);
