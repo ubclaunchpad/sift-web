@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 class Button extends Component {
-
 	static displayName = 'Button';
 
 	state = {
@@ -20,7 +19,7 @@ class Button extends Component {
 		return (
 			<div>
 				<p>Testing</p>
-				{this.props.isDisabled ? <p>{this.state.failedMessage}</p> : null}}
+				{this.props.isDisabled ? <p>{this.state.failedMessage}</p> : null}
 				<button onClick={this._onClick}>
 					Submit File
 				</button>
@@ -38,4 +37,3 @@ class Button extends Component {
 }
 
 export default Button;
-export {Button};
