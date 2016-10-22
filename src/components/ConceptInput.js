@@ -38,7 +38,7 @@ class ConceptInput extends Component {
 		const listItem = this.state.tokens.map(token =>
 			(
 				<div key={token.id}>
-					<input type="button" value={token.name} disabled="true"/>
+					{token.name}
 					<button onClick={this.deleteToken.bind(this, token)}>deleteToken</button>
 				</div>
 			)
@@ -46,6 +46,7 @@ class ConceptInput extends Component {
 		return (
 			<div>
 				<input
+					ref="input"
 					type="text"
 					value={this.state.inputValue}
 					onKeyPress={this.handleOnKeyPress}
