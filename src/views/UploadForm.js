@@ -1,6 +1,6 @@
 import Button from './../components/Button';
-import DropArea from './../components/DropArea';
 import ConceptInput from './../components/ConceptInput';
+import DropArea from './../components/DropArea';
 import React from 'react';
 
 const UploadForm = () => (
