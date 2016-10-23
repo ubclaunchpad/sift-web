@@ -8,7 +8,7 @@ class ConceptInput extends Component {
 		inputValue: ''
 	}
 
-	handleOnKeyPress(e) {
+	_handleOnKeyPress = e => {
 		if (e.key === 'Enter' && this.state.inputValue !== '') {
 			this.setState({
 				tokens: [...this.state.tokens, this.state.inputValue],
@@ -17,33 +17,32 @@ class ConceptInput extends Component {
 		}
 	}
 
-	handleOnChange(e) {
+	_handleOnChange = e => {
 		this.setState({inputValue: e.target.value});
 	}
 
-	deleteToken(tokenIndex){
-		const newState = this.state.tokens;
-		newState.splice(tokenIndex, 1);
-		this.setState({tokens: newState})
+	_deleteToken = tokenIndex => {
+		const newTokens = this.state.tokens;
+		newTokens.splice(tokenIndex, 1);
+		this.setState({tokens: newTokens})
 	}
 
 	render() {
-		const listItem = this.state.tokens.map((token, index) =>
-			(
-				<div key={index}>
-					{token}
-					<button onClick={index => this.deleteToken(index)}>Delete Token</button>
-				</div>
+		const tokens = this.state.tokens.map((token, index) => (
+			<div key={index}>
+				{token}
+				<button onClick={() => this._deleteToken(index)}>Delete Token</button>
+			</div>
 			)
-		)
+		);
 		return (
 			<div>
 				<input
 					type="text"
 					value={this.state.inputValue}
-					onKeyPress={this.handleOnKeyPress.bind(this)}
-					onChange={this.handleOnChange.bind(this)}/>
-				{listItem}
+					onKeyPress={this._handleOnKeyPress}
+					onChange={this._handleOnChange}/>
+				{tokens}
 			</div>
 		);
 	}
