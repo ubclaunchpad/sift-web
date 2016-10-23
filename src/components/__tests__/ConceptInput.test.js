@@ -8,7 +8,14 @@ describe('<ConceptInput />', () => {
 		const input = wrapper.find('input');
 		input.simulate('change', {target: {value: 'giraffe'}});
 		input.simulate('keypress', {key: 'Enter'});
-		expect(wrapper.state('tokens')[0].name).toEqual('giraffe');
+		expect(wrapper.state('tokens')[0]).toEqual('giraffe');
+	});
+	it('if the input is empty, do not create a token', () => {
+		const wrapper = shallow(<ConceptInput />);
+		const input = wrapper.find('input');
+		input.simulate('change', {target: {value: ''}});
+		input.simulate('keypress', {key: 'Enter'});
+		expect(wrapper.state('tokens').length).toEqual(0);
 	});
 	it('Should remove the selected token', () => {
 		const wrapper = shallow(<ConceptInput />);

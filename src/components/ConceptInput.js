@@ -1,24 +1,19 @@
 import React, {Component} from 'react';
 
 class ConceptInput extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			newID: 0,
-			tokens: [],
-			inputValue: ''
-		}
-		this.handleOnKeyPress = this.handleOnKeyPress.bind(this);
-		this.handleOnChange = this.handleOnChange.bind(this);
-		this.deleteToken = this.deleteToken.bind(this);
+	static displayName = 'ConceptInput';
+
+	state = {
+		tokens: [],
+		inputValue: ''
 	}
 
 	handleOnKeyPress(e) {
 		if (e.key === 'Enter' && this.state.inputValue !== '') {
-			this.setState({newID: this.state.newID + 1});
-			this.setState({tokens: this.state.tokens.concat({id: this.state.newID,
-							name: this.state.inputValue}),
-				inputValue: ''});
+			this.setState({
+				tokens: [...this.state.tokens, this.state.inputValue],
+				inputValue: ''
+			});
 		}
 	}
 
@@ -26,31 +21,28 @@ class ConceptInput extends Component {
 		this.setState({inputValue: e.target.value});
 	}
 
-	deleteToken(token){
+	deleteToken(tokenIndex){
 		const newState = this.state.tokens;
-		if (newState.indexOf(token) > -1) {
-			newState.splice(newState.indexOf(token), 1);
-			this.setState({tokens: newState})
-		}
+		newState.splice(tokenIndex, 1);
+		this.setState({tokens: newState})
 	}
 
 	render() {
-		const listItem = this.state.tokens.map(token =>
+		const listItem = this.state.tokens.map((token, index) =>
 			(
-				<div key={token.id}>
-					{token.name}
-					<button onClick={this.deleteToken.bind(this, token)}>deleteToken</button>
+				<div key={index}>
+					{token}
+					<button onClick={index => this.deleteToken(index)}>Delete Token</button>
 				</div>
 			)
 		)
 		return (
 			<div>
 				<input
-					ref="input"
 					type="text"
 					value={this.state.inputValue}
-					onKeyPress={this.handleOnKeyPress}
-					onChange={this.handleOnChange}/>
+					onKeyPress={this.handleOnKeyPress.bind(this)}
+					onChange={this.handleOnChange.bind(this)}/>
 				{listItem}
 			</div>
 		);
