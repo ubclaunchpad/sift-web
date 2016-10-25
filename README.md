@@ -1,6 +1,6 @@
 # Sift Web
 [![Build Status](https://api.travis-ci.org/ubclaunchpad/sift-web.svg?branch=master)](https://travis-ci.org/ubclaunchpad/sift-web)
-[![Coverage Status]([![Coverage Status](https://coveralls.io/repos/github/ubclaunchpad/sift-web/badge.svg?branch=master)](https://coveralls.io/github/ubclaunchpad/sift-web?branch=master))
+[![Coverage Status](https://coveralls.io/repos/github/ubclaunchpad/sift-web/badge.svg?branch=master)](https://coveralls.io/github/ubclaunchpad/sift-web?branch=master)
 
 Web interface to the Sift app, using React.
 
