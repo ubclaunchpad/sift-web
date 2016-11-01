@@ -7,7 +7,7 @@ class SentimentAnalysisGraph extends Component {
 	static displayName = 'SentimentAnalysisGraph';
 
 	state = {
-		getRandomData: this.getData(),
+		getRandomValues: this.getData(),
 		data: {pos_value: 90, neg_value: 10}
 	};
 
