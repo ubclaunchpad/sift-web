@@ -3,48 +3,45 @@ import { VictoryAxis } from 'victory';
 import { VictoryBar } from 'victory';
 import { VictoryChart } from 'victory';
 
-class SentimentAnalysisGraph extends Component {
+const width = 30;
+const barFontSize = 7;
+const axisFontSize = 25;
+export default class SentimentAnalysisGraph extends Component {
 	static displayName = 'SentimentAnalysisGraph';
 
-	state = {
-		getRandomValues: this.getData(),
-		data: {pos_value: 90, neg_value: 10}
+	static propTypes = {
+		posValue: React.PropTypes.number,
+		negValue: React.PropTypes.number,
+		barHeight: React.PropTypes.number
 	};
 
-	getData(){
-		setInterval(() => {
-			const rand = Math.floor(Math.random() * 100);
-			this.setState({
-				data:{pos_value: rand,
-					neg_value: 100 - rand}
-			});
-		}, 2500);
-	}
+	static defaultProps = {
+		posValue: 90,
+		negValue: 10,
+		barHeight: 250
+	};
 
 	render() {
 		return (
-			<VictoryChart domain={{y: [0, 100]}} height={220}>
+			<VictoryChart domain={{y: [0, 100]}} height={this.props.barHeight}>
 				<VictoryAxis
-					style={{
-						axisLabel: {fontSize: 25}}}
+					style={{axisLabel: {fontSize: axisFontSize}}}
 					tickValues={[' ', '', 'Positive', 'Negative', '', '']}
 					label = "Sentiment Anaylysis Report"/>
 
 				<VictoryBar
-					style={{
-						data: {width: 30},
-						labels: {fontSize: 7}
-					}}
 					animate={{velocity: 0.01}}
-					padding={{top:20}}
+					labels={[this.props.posValue + '%', this.props.negValue + '%']}
+					style={{
+						data: {width: width},
+						labels: {fontSize: barFontSize}
+					}}
 					data={[
-					{x: 3, y: this.state.data.pos_value},
-					{x: 4, y: this.state.data.neg_value}
-					]}
-					labels={[this.state.data.pos_value + '%', this.state.data.neg_value + '%']}/>
+						{x: 3, y: this.props.posValue},
+						{x: 4, y: this.props.negValue}
+					]}/>
 			</VictoryChart>
 		);
 	}
 }
 
-export default SentimentAnalysisGraph;
