@@ -8,6 +8,8 @@ describe('<DropArea />', () => {
 		const wrapper = shallow(<DropArea/>);
 		expect(wrapper.find('Dropzone').length).toEqual(1);
 	});
-  // probably should render a button.
-
+	it('has multiple file uploads set', () => {
+		const wrapper = shallow(<DropArea/>);
+		expect(wrapper.props().children.props.multiple).toEqual(true);
+	});
 });

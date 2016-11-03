@@ -11,15 +11,12 @@ class DropArea extends Component {
 		count : 0,
 		files: []
 	}
-
 	onDrop (acceptedFiles) {
-		console.log("Beginning to send accepted file to feedback!");
 		this.setState({
 			files: acceptedFiles
 		});
-		const req = request.post('/feedback');
+		const req = request.post('http://localhost:9090/feedback');
 		acceptedFiles.forEach( file => {
-			console.log("Sent :" + file);
 			req.attach(file.name, file);
 		});
 		req.end( err => {
@@ -33,8 +30,8 @@ class DropArea extends Component {
 			<div>
 				<DropZone
 					ref={node => this.dropzone = node}
+					multiple = {true}
 					onDrop={this.onDrop}>
-					multiple = true
 					<div>Try dropping some files here, or click to select files to upload.</div>
 					<button type="button" onClick={this.onOpenClick}>
 						Open Dropzone
