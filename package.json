@@ -43,6 +43,7 @@
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-react": "^6.4.1",
     "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "react-dropzone": "^3.6.0",
     "victory": "^0.13.3",
     "webpack": "^1.13.2"
