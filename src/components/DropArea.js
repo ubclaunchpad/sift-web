@@ -15,7 +15,7 @@ class DropArea extends Component {
 		this.setState({
 			files: acceptedFiles
 		});
-		const req = request.post('http://localhost:9090/feedback');
+	/*	const req = request.post('http://localhost:9090/feedback');
 		acceptedFiles.forEach( file => {
 			req.attach(file.name, file);
 		});
@@ -24,6 +24,7 @@ class DropArea extends Component {
 				throw err;
 			}
 		});
+	*/	
 	}
 	render() {
 		return (
