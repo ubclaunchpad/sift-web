@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import DropZone from 'react-dropzone';
-import request from 'superagent'
-// import {JSZip} from 'jszip';
-// stubbed jszip for time being until implemented.
 
 class DropArea extends Component {
 	static displayName = 'DropArea';
@@ -24,7 +21,7 @@ class DropArea extends Component {
 				throw err;
 			}
 		});
-	*/	
+	*/
 	}
 	render() {
 		return (

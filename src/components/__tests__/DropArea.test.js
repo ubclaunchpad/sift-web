@@ -1,9 +1,6 @@
 import DropArea from './../DropArea';
 import React from 'react';
-import ReactDOM from 'react';
 import {shallow} from 'enzyme';
-import sinon from 'sinon';
-import request from 'superagent';
 
 describe('<DropArea />', () => {
 
