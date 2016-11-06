@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import { VictoryAxis } from 'victory';
-import { VictoryBar } from 'victory';
-import { VictoryChart } from 'victory';
+import React, {Component} from 'react';
+import {VictoryAxis, VictoryBar, VictoryChart} from 'victory';
 
 const width = 30;
 const barFontSize = 7;
@@ -44,4 +42,3 @@ export default class SentimentAnalysisGraph extends Component {
 		);
 	}
 }
-
