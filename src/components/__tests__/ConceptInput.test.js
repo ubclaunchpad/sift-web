@@ -1,9 +1,6 @@
 import ConceptInput from './../ConceptInput';
-import Radium from 'radium';
 import React from 'react';
 import {shallow} from 'enzyme';
-
-Radium.TestMode.enable();
 
 describe('<ConceptInput />', () => {
 	it('should add a token under the textbox', () => {
