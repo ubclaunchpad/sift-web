@@ -1,23 +1,28 @@
 import ConceptInput from './../ConceptInput';
+import Radium from 'radium';
 import React from 'react';
 import {shallow} from 'enzyme';
 
+Radium.TestMode.enable();
+
 describe('<ConceptInput />', () => {
-	it('Should add a token under the textbox', () => {
+	it('should add a token under the textbox', () => {
 		const wrapper = shallow(<ConceptInput />);
 		const input = wrapper.find('input');
 		input.simulate('change', {target: {value: 'giraffe'}});
 		input.simulate('keypress', {key: 'Enter'});
 		expect(wrapper.state('tokens')[0]).toEqual('giraffe');
 	});
-	it('if the input is empty, do not create a token', () => {
+
+	it('should not create a token if the input is empty', () => {
 		const wrapper = shallow(<ConceptInput />);
 		const input = wrapper.find('input');
 		input.simulate('change', {target: {value: ''}});
 		input.simulate('keypress', {key: 'Enter'});
 		expect(wrapper.state('tokens').length).toEqual(0);
 	});
-	it('Should remove the selected token', () => {
+
+	it('should remove the selected token', () => {
 		const wrapper = shallow(<ConceptInput />);
 		const input = wrapper.find('input');
 		input.simulate('change', {target: {value: 'giraffe'}});

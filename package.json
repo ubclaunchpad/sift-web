@@ -42,6 +42,7 @@
     "eslint": "^3.7.0",
     "eslint-plugin-import": "^2.0.1",
     "eslint-plugin-react": "^6.4.1",
+    "radium": "^0.18.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-dropzone": "^3.6.0",
