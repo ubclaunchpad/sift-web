@@ -9,10 +9,6 @@ const formUploadReducer = (state = initialState, action) => {
 		case ActionTypes.ADD_FILE:
 			state.files.append(action.payload.file);
 			return state;
-		case ActionTypes.UPLOAD_SUCCESS:
-			return state;
-		case ActionTypes.UPLOAD_ERROR:
-			return state;
 		default:
 			return state;
 	}

@@ -6,7 +6,7 @@ import store from './store'
 import UploadForm from './views/UploadForm'
 
 
-
+// TODO: Need to modify with global container
 ReactDOM.render(
 	<Provider store={store}><UploadForm /></Provider>,
 	document.getElementById('app')

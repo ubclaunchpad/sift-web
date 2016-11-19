@@ -1,6 +1,6 @@
+import combineReducers from './reducers/CombinedReducers'
 import { createStore } from 'redux'
-import index from './reducers'
 
 
 
-export default createStore(index)
+export default createStore(combineReducers)

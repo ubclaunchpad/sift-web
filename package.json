@@ -45,6 +45,7 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-dropzone": "^3.6.0",
+    "superagent": "^2.3.0",
     "victory": "^0.13.3",
     "webpack": "^1.13.2"
   },
@@ -59,6 +60,7 @@
     "eslint-plugin-react": "^6.3.0",
     "jest": "^15.1.1",
     "react-addons-test-utils": "^15.3.2",
+    "superagent": "^2.3.0",
     "webpack-dev-server": "^1.16.1"
   }
 }
