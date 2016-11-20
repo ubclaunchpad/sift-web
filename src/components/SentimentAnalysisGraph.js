@@ -38,8 +38,8 @@ export default class SentimentAnalysisGraph extends Component {
 						{x: 1, y: totalValue, fill: 'darkred'}
 					]}/>
 				<VictoryBar
-					animate={{  velocity: 0.1,
-								onLoad:{duration: this.props.isAnimated ? durationValue : 0}}}
+					animate={{velocity: 0.1,
+						onLoad:{duration: this.props.isAnimated ? durationValue : 0}}}
 					horizontal
 					style={{
 						data: {width: this.props.width}
