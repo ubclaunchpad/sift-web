@@ -1,44 +1,53 @@
 import React, {Component} from 'react';
 import {VictoryAxis, VictoryBar, VictoryChart} from 'victory';
 
-const width = 30;
-const barFontSize = 7;
-const axisFontSize = 25;
+const totalValue = 100;
+const durationValue = 2000;
 export default class SentimentAnalysisGraph extends Component {
 	static displayName = 'SentimentAnalysisGraph';
 
 	static propTypes = {
 		posValue: React.PropTypes.number,
-		negValue: React.PropTypes.number,
-		barHeight: React.PropTypes.number
+		width: React.PropTypes.number,
+		isAnimated: React.PropTypes.bool
 	};
 
 	static defaultProps = {
-		posValue: 90,
-		negValue: 10,
-		barHeight: 250
+		posValue: 68,
+		width: 30,
+		isAnimated: false
 	};
 
 	render() {
+		const message = `Feedback is ${this.props.posValue}% positive.`;
 		return (
-			<VictoryChart domain={{y: [0, 100]}} height={this.props.barHeight}>
+			<VictoryChart domain={{y: [0, 100]}}>
 				<VictoryAxis
-					style={{axisLabel: {fontSize: axisFontSize}}}
-					tickValues={[' ', '', 'Positive', 'Negative', '', '']}
-					label = "Sentiment Anaylysis Report"/>
-
-				<VictoryBar
-					animate={{velocity: 0.01}}
-					labels={[this.props.posValue + '%', this.props.negValue + '%']}
+					label={message}
 					style={{
-						data: {width: width},
-						labels: {fontSize: barFontSize}
+						axis: {stroke: 'none'},
+						tickLabels: {fill: 'none'},
+						axisLabel: {fontSize: 16, padding: 16}
+					}}/>
+				<VictoryBar
+					horizontal
+					style={{
+						data: {width: this.props.width}
 					}}
 					data={[
-						{x: 3, y: this.props.posValue},
-						{x: 4, y: this.props.negValue}
+						{x: 1, y: totalValue, fill: 'darkred'}
+					]}/>
+				<VictoryBar
+					animate={{velocity: 0.1,
+						onLoad:{duration: this.props.isAnimated ? durationValue : 0}}}
+					horizontal
+					style={{
+						data: {width: this.props.width}
+					}}
+					data={[
+						{x: 1, y: this.props.posValue, fill: 'green'}
 					]}/>
 			</VictoryChart>
-		);
+		)
 	}
 }
