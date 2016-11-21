@@ -27,7 +27,7 @@ export default class SentimentAnalysisGraph extends Component {
 					style={{
 						axis: {stroke: 'none'},
 						tickLabels: {fill: 'none'},
-						axisLabel: {fontSize: 10, padding: 15}
+						axisLabel: {fontSize: 16, padding: 16}
 					}}/>
 				<VictoryBar
 					horizontal
