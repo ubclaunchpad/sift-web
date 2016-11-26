@@ -9,7 +9,6 @@ const UploadForm = () => (
 		<DropArea />
 		<Button />
 		<ConceptInput />
-		<SentimentAnalysisGraph />
 	</div>
 );
 

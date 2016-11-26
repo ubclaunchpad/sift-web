@@ -15,6 +15,12 @@ export default function fileProcessingReducer(state = initialState, action){
 		case ActionTypes.UPLOAD:
 			state.viewState = viewTypes.processing;
 			return state;
+		case ActionTypes.UPLOAD_SUCCESS:
+			state.viewState = viewTypes.results;
+			return state;
+		case ActionTypes.UPLOAD_ERROR:
+			state.viewState = viewTypes.form;
+			return state;
 		default:
 			return state;
 	}

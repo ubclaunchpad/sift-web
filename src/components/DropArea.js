@@ -1,18 +1,20 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
+import {addFile} from './../actions/ActionCreators';
+import {connect} from 'react-redux';
 import DropZone from 'react-dropzone';
+
 
 class DropArea extends Component {
 	static displayName = 'DropArea';
 
-	state = {
-		count : 0,
-		files: []
+	static propTypes = {
+		addFile: PropTypes.func
 	}
+
 	onDrop (acceptedFiles) {
-		this.setState({
-			files: acceptedFiles
-		});
+		this.props.addFile(acceptedFiles[0])
 	}
+
 	render() {
 		return (
 			<div>
@@ -24,15 +26,19 @@ class DropArea extends Component {
 					<button type="button" onClick={this.onOpenClick}>
 						Open Dropzone
 					</button>
-					{this.state.files.length > 0 ? <div>
+					{/*this.state.files.length > 0 ? <div>
 						<h2> Uploading {this.state.files.length} files...</h2>
 						<div> {this.state.files.map(file => <img src={file.preview} /> )}</div>
 					</div>
-					: null}
+					: null*/}
 				</DropZone>
 			</div>
 		);
 	}
 }
 
-export default DropArea;
+export default connect(null, dispatch => {
+	return {
+		addFile: file => dispatch(addFile(file))
+	};
+})(DropArea);

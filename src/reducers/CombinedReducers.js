@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
 import fileProcessing from './FileProcessingReducer'
-import fileUpload from './FileProcessingReducer'
-import results from './ResultsReducer'
+import form from './formReducer'
+import view from './ViewReducer'
 
 export default combineReducers({
 	fileProcessing,
-	fileUpload,
-	results
+	form,
+	view
 })
