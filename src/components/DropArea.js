@@ -11,34 +11,27 @@ class DropArea extends Component {
 		addFile: PropTypes.func
 	}
 
-	onDrop (acceptedFiles) {
-		this.props.addFile(acceptedFiles[0])
-	}
-
 	render() {
 		return (
 			<div>
 				<DropZone
 					ref={node => this.dropzone = node}
-					multiple = {true}
+					multiple={false}
 					onDrop={this.onDrop}>
 					<div>Try dropping some files here, or click to select files to upload.</div>
-					<button type="button" onClick={this.onOpenClick}>
-						Open Dropzone
-					</button>
-					{/*this.state.files.length > 0 ? <div>
+					{/* this.state.files.length > 0 ? <div>
 						<h2> Uploading {this.state.files.length} files...</h2>
 						<div> {this.state.files.map(file => <img src={file.preview} /> )}</div>
 					</div>
-					: null*/}
+					: null */}
 				</DropZone>
 			</div>
 		);
 	}
+
+	onDrop = file => this.props.addFile(file);
 }
 
-export default connect(null, dispatch => {
-	return {
-		addFile: file => dispatch(addFile(file))
-	};
-})(DropArea);
+export default connect(null, dispatch => ({
+	addFile: file => dispatch(addFile(file))
+}))(DropArea);

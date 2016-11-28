@@ -1,17 +1,17 @@
 import ActionTypes from '../actions/ActionTypes'
-import ViewEnum from '../actions/ViewEnum'
+import ViewTypes from '../actions/ViewTypes'
 
 const initialState = {
-	viewState : ViewEnum.RESULTS
+	viewState : ViewTypes.RESULTS
 }
 
 export default function resultsReducer (state = initialState, action) {
 	switch(action.type) {
 		case ActionTypes.UPLOAD_SUCCESS:
-			state.viewState = ViewEnum.RESULTS;
+			state.viewState = ViewTypes.RESULTS;
 			return state;
 		case ActionTypes.UPLOAD_ERROR:
-			state.viewState = ViewEnum.FORM;
+			state.viewState = ViewTypes.FORM;
 			return state;
 		default:
 			return state;
