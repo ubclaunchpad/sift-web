@@ -4,6 +4,13 @@
 
 Web interface to the Sift app, using React.
 
+The other components to Sift are in these repositories:
+The following repositories contain Sift services:
+* [sift-base](https://github.com/ubclaunchpad/sift-base)
+* [sift-api](https://github.com/ubclaunchpad/sift-api)
+* [sift-nlp](https://github.com/ubclaunchpad/sift-nlp)
+
+
 ## Setup
 
 Clone and install dependencies.
