@@ -1,0 +1,2 @@
+# Do not include local node_modules
+node_modules/
