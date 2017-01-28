@@ -28,25 +28,25 @@ export function addFile(file) {
 		payload : {
 			file
 		}
-};
+	};
 }
 
 export function uploadForm(file) {
 	return function(dispatch) {
+		startUpload();
+		request.post(url + '/feedback');
+		req.attach(file.name, file);
+		req.end( (err, res) => {
+			if (err){
+				errorUploading();
+			}
+			else{
+				successfulUpload(res);
+				// console.log(res);
+			}
+		});
 		// perform async action -- upload file
 		// if success: dispatch(succesfulActioncreator());
 		// else: dispatch(failedActioncreator());
 	}
-	startUpload();
-	request.post(url + '/feedback');
-	req.attach(file.name, file);
-	req.end( (err, res) => {
-		if (err){
-			errorUploading();
-		}
-		else{
-			successfulUpload(res);
-			// console.log(res);
-		}
-	});
 }
