@@ -12,14 +12,14 @@ const initialState = {
 
 export default function fileProcessingReducer(state = initialState, action){
 	switch(action.type) {
-		case ActionTypes.UPLOAD:
+		/*case ActionTypes.UPLOAD:
 			state.viewState = viewTypes.processing;
-			return state;
+			return state;*/
 		case ActionTypes.UPLOAD_SUCCESS:
-			state.viewState = viewTypes.results;
+			state.viewState = viewTypes.RESULTS;
 			return state;
 		case ActionTypes.UPLOAD_ERROR:
-			state.viewState = viewTypes.form;
+			state.viewState = viewTypes.FORM;
 			return state;
 		default:
 			return state;

@@ -14,7 +14,7 @@ export function startUpload(){
 	return { type : actions.UPLOAD_START};
 }
 
-//TODO: handle response.
+// TODO: handle response.
 export function successfulUpload(response) {
 	return { type : actions.UPLOAD_SUCCESS};
 }
@@ -32,17 +32,21 @@ export function addFile(file) {
 }
 
 export function uploadForm(file) {
-startUpload();
-request.post(url + '/feedback');
-req.attach(file.name, file);
-req.end( (err, res) => {
-	if (err){
-		errorUploading();
+	return function(dispatch) {
+		// perform async action -- upload file
+		// if success: dispatch(succesfulActioncreator());
+		// else: dispatch(failedActioncreator());
 	}
-	else{
-		successfulUpload(res);
-		console.log(res);
-
-	}
-});
+	startUpload();
+	request.post(url + '/feedback');
+	req.attach(file.name, file);
+	req.end( (err, res) => {
+		if (err){
+			errorUploading();
+		}
+		else{
+			successfulUpload(res);
+			// console.log(res);
+		}
+	});
 }

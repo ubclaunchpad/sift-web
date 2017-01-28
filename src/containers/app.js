@@ -19,9 +19,9 @@ class App extends Component {
 	render() {
 		if (this.props.viewState === views.FORM) {
 			return <UploadForm />;
-		} else if (this.props.viewState === views.PROCESSING) {
+		} /*else if (this.props.viewState === views.PROCESSING) {
 			return // <Processing />;
-		} else if (this.props.viewState === views.RESULTS) {
+		}*/ else if (this.props.viewState === views.RESULTS) {
 			return <Results />;
 		}
 	}
