@@ -3,30 +3,45 @@ import SentimentAnalysisGraph from './../SentimentAnalysisGraph';
 import {shallow} from 'enzyme';
 
 describe('<SentimentAnalysisGraph />', () => {
-	it('Sum of positive value and negative value should be 100 with provided props', () => {
-		const wrapper = shallow(<SentimentAnalysisGraph posValue={60} negValue={40}/>);
-		const posValue = wrapper.node.props.children[1].props.data[0].y;
-		const negValue = wrapper.node.props.children[1].props.data[1].y;
-		expect(posValue + negValue).toEqual(100);
+	it('should have a positive value of 68 by default', () => {
+		const wrapper = shallow(<SentimentAnalysisGraph />);
+		const posValue = wrapper.node.props.children[2].props.data[0].y;
+		expect(posValue).toEqual(68);
 	});
 
-	it('Default positive value and negative value shoule be 90 and 10 respectively', () => {
-		const wrapper = shallow(<SentimentAnalysisGraph />);
-		const posValue = wrapper.node.props.children[1].props.data[0].y;
-		const negValue = wrapper.node.props.children[1].props.data[1].y;
+	it('should have a positive value of 90 with provided props', () => {
+		const wrapper = shallow(<SentimentAnalysisGraph posValue={90}/>);
+		const posValue = wrapper.node.props.children[2].props.data[0].y;
 		expect(posValue).toEqual(90);
-		expect(negValue).toEqual(10);
 	});
 
-	it('Default bar height should be 250', () => {
+	it('should always have a total value of 100', () => {
 		const wrapper = shallow(<SentimentAnalysisGraph />);
-		const barHeight = wrapper.node.props.height;
-		expect(barHeight).toEqual(250);
+		const totalValue = wrapper.node.props.children[1].props.data[0].y;
+		expect(totalValue).toEqual(100);
 	});
 
-	it('Bar height should be 350 with provided prop barHeight = 350', () => {
-		const wrapper = shallow(<SentimentAnalysisGraph barHeight={350}/>);
-		const barHeight = wrapper.node.props.height;
-		expect(barHeight).toEqual(350);
+	it('should have a bar width of 30 by default', () => {
+		const wrapper = shallow(<SentimentAnalysisGraph />);
+		const width = wrapper.node.props.children[2].props.style.data.width;
+		expect(width).toEqual(30);
+	});
+
+	it('should have a bar width of 70 with provided props', () => {
+		const wrapper = shallow(<SentimentAnalysisGraph width={70} />);
+		const width = wrapper.node.props.children[2].props.style.data.width;
+		expect(width).toEqual(70);
+	});
+
+	it('should not add any animation to the bar by default', () => {
+		const wrapper = shallow(<SentimentAnalysisGraph />);
+		const durationValue = wrapper.node.props.children[2].props.animate.onLoad.duration;
+		expect(durationValue).toEqual(0);
+	});
+
+	it('should add animation to the bar with duration of 2000', () => {
+		const wrapper = shallow(<SentimentAnalysisGraph isAnimated={true} />);
+		const durationValue = wrapper.node.props.children[2].props.animate.onLoad.duration;
+		expect(durationValue).toEqual(2000);
 	});
 });
