@@ -5,6 +5,7 @@ import UploadForm from './views/UploadForm';
 import ViewTypes from './actions/ViewTypes';
 
 const App = ({viewState}) => {
+	console.log('app');
 	let ViewComponent = null;
 
 	switch (viewState) {

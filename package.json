@@ -48,6 +48,8 @@
     "react-dropzone": "^3.6.0",
     "react-redux": "^4.4.6",
     "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-thunk": "^2.2.0",
     "superagent": "^2.3.0",
     "victory": "^0.13.3",
     "webpack": "^1.13.2"

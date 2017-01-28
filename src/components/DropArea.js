@@ -28,7 +28,6 @@ class DropArea extends Component {
 			</div>
 		);
 	}
-
 	onDrop = file => this.props.addFile(file);
 }
 

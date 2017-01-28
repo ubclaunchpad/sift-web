@@ -24,6 +24,7 @@ export function errorUploading() {
 }
 
 export function addFile(file) {
+	console.log('Add file!');
 	return { type : actions.ADD_FILE,
 		payload : {
 			file
