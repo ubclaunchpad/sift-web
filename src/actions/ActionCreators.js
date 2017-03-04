@@ -6,6 +6,7 @@
 */
 import actions from './ActionTypes';
 import request from 'superagent';
+import store from '../store';
 
 
 const url = 'http://localhost:9090';
@@ -24,7 +25,7 @@ export function errorUploading() {
 }
 
 export function addFile(file) {
-	console.log('Add file!');
+	//console.log('Add file!');
 	return { type : actions.ADD_FILE,
 		payload : {
 			file
@@ -32,20 +33,27 @@ export function addFile(file) {
 	};
 }
 
-export function uploadForm(file) {
+export function uploadForm() {
 	return function(dispatch) {
-		startUpload();
-		request.post(url + '/feedback');
-		req.attach(file.name, file);
-		req.end( (err, res) => {
-			if (err){
-				errorUploading();
-			}
-			else{
-				successfulUpload(res);
-				// console.log(res);
-			}
-		});
+		// TODO: DO ASYNCHONOUS UPLOAD TO THE SERVER
+		// Need to have state at this point to access file and upload to server
+		// Dispatch upload to upload view
+		const file = new FormData();
+		file.append('file', store.getState().form.files[0][0]);
+		fetch('https://sift-api:9090/feedback/', {
+			method: 'POST',
+			body: file
+		})
+		dispatch(startUpload(store.getState().form.files[0][0]));
+		/*
+		let err = true;
+		if(err) {
+			dispatch(errorUploading());
+		}
+		else{
+			dispatch(successfulUpload());
+		}
+		*/
 		// perform async action -- upload file
 		// if success: dispatch(succesfulActioncreator());
 		// else: dispatch(failedActioncreator());

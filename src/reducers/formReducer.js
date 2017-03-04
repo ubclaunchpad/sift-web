@@ -5,13 +5,13 @@ const initialState = {
 }
 
 const FormReducer = (state = initialState, action) => {
+	//console.log("FORM!");
 	switch(action.type) {
 		case ActionTypes.ADD_FILE:
+			console.log("Push file onto payload!");
 			state.files.push(action.payload.file);
-			console.log('Hey!');
 			return state;
 		default:
-			console.log('Hey Default!');
 			return state;
 	}
 }
