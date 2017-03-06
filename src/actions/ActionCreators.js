@@ -39,8 +39,8 @@ export function uploadForm() {
 		// Need to have state at this point to access file and upload to server
 		// Dispatch upload to upload view
 		const file = new FormData();
-		file.append('file', store.getState().form.files[0][0]);
-		fetch('https://sift-api:9090/feedback/', {
+		file.append('feedback', store.getState().form.files[0][0]);
+		fetch('sift-api:9090/feedback', {
 			method: 'POST',
 			body: file
 		})
