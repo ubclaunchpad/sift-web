@@ -40,7 +40,7 @@ export function uploadForm() {
 		// Dispatch upload to upload view
 		const file = new FormData();
 		file.append('feedback', store.getState().form.files[0][0]);
-		fetch('sift-api:9090/feedback', {
+		fetch('http://sift-api:9090/feedback', {
 			method: 'POST',
 			body: file
 		})
