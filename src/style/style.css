@@ -11,10 +11,28 @@
   padding-top: 60px;
   box-sizing: border-box;
 }
+.login {
+  width: 80%;
+  margin: 0 auto;
+}
+.login input {
+  height: 50px;
+  min-width: 200px;
+  display: block;
+  line-height: 2em;
+  font-family: 'Raleway', sans-serif;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.login input:focus {
+  outline: none;
+  border-bottom-width: 2px;
+}
 *,
 body {
   padding: 0;
-  border: 0;
+  margin: 0;
   font-family: 'Raleway', sans-serif;
 }
 body {

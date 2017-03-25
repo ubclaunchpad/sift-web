@@ -2,6 +2,7 @@ import Button from './../components/Button';
 import ConceptInput from './../components/ConceptInput';
 import DropArea from './../components/DropArea';
 import React from 'react';
+import LoginPage from './../components/LoginPage';
 
 const UploadForm = () => (
 	<div>
@@ -10,6 +11,7 @@ const UploadForm = () => (
 		<DropArea />
 		<Button />
 		<ConceptInput />
+		<LoginPage />
 	</div>
 );
 

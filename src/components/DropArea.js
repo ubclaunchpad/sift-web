@@ -13,12 +13,13 @@ class DropArea extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className='droparea'>
 				<DropZone
+					className='box'
 					ref={node => this.dropzone = node}
 					multiple={false}
 					onDrop={this.onDrop}>
-					<div>Try dropping some files here, or click to select files to upload.</div>
+					<h6>Try dropping some files here, or click to select files to upload.</h6>
 					{/* this.state.files.length > 0 ? <div>
 						<h2> Uploading {this.state.files.length} files...</h2>
 						<div> {this.state.files.map(file => <img src={file.preview} /> )}</div>
