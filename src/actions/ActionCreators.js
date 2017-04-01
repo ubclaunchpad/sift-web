@@ -36,7 +36,7 @@ export function uploadForm() {
 		// Dispatch upload to upload view
 		const file = new FormData();
 		file.append('feedback', store.getState().form.files[0][0]);
-		fetch(url, {
+		fetch('http://localhost:9090/feedback', {
 			method: 'POST',
 			body: file
 		})
