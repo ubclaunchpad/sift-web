@@ -1,16 +1,22 @@
-FROM nginx:1.11.10
-MAINTAINER Jordan Schalm <jordan.schalm@gmail.com>
+FROM nginx:1.11.9
+MAINTAINER Eric Stroczynski <ericstroczynski@gmail.com>
 
+# Ensure env is up to date and clean, and install curl
 RUN apt-get update \
+    && apt-get clean \
     && apt-get install -y curl \
-    && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
-    && apt-get install -y nodejs \
-    && apt-get clean
-    
-# RUN ln -s /usr/bin/nodejs /usr/bin/node
+    xz-utils
+# Install nodeJS and link npm and nodejs to /usr/local/bin
+RUN cd /usr/local \
+    && \curl -LO https://nodejs.org/dist/v6.9.4/node-v6.9.4-linux-x64.tar.xz \
+    && tar -Jxvf node-v6.9.4-linux-x64.tar.xz \
+    && mv ./node-v6.9.4-linux-x64 nodejs \
+    && ln -s /usr/local/nodejs/bin/node /usr/bin/node \
+    && ln -s /usr/local/nodejs/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
 
 ENV NGINX_ROOT /usr/share/nginx/html
-
+# Copy in source code and install deps/build project
 COPY . $NGINX_ROOT
-RUN cd $NGINX_ROOT && npm install
-RUN cd $NGINX_ROOT && npm run build
+RUN cd $NGINX_ROOT \
+    && npm install \
+    && npm run build
