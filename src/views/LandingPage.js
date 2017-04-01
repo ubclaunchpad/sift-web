@@ -1,11 +1,11 @@
 import React from 'react';
-import LoginPage from './../components/LoginPage';
+import LoginForm from './../components/LoginForm';
 
 const LandingPage = () => (
   <div>
     <h1> Sift </h1>
     <h2> A simple review <span> aggregator</span> app. </h2>
-    <LoginPage />
+    <LoginForm />
   </div>
 );
 
