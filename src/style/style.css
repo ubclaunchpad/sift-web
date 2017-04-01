@@ -1,0 +1,76 @@
+.droparea {
+  width: 250px;
+  height: 250px;
+  display: block;
+  border: 1px solid #ddd;
+  margin-left: 10%;
+  margin-top: 100px;
+}
+.droparea .box {
+  border: none;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+.login {
+  width: 80%;
+  margin: 0 auto;
+}
+.login input {
+  height: 50px;
+  min-width: 200px;
+  display: block;
+  line-height: 2em;
+  font-family: 'Raleway', sans-serif;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.login input:focus {
+  outline: none;
+  border-bottom-width: 2px;
+}
+*,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+body {
+  overflow: hidden;
+}
+h1 {
+  font-size: 2.1em;
+  line-height: 2em;
+  width: 80%;
+  margin: 0 auto;
+  color: #282929;
+  font-weight: 900;
+  margin-top: 70px;
+}
+h2 {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.6em;
+  font-size: 1em;
+  color: #979797;
+  font-weight: 300;
+}
+h2 span {
+  color: #52e4df;
+}
+h6 {
+  font-size: 1em;
+  font-weight: 900;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  color: #bebebe;
+  letter-spacing: 0.5px;
+}
+h6 .or {
+  display: inline;
+  color: #52e4df;
+}
+h6 .or:before {
+  content: '/f004';
+}
