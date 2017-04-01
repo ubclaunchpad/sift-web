@@ -1,5 +1,5 @@
 import React from 'react';
-import SentimentAnalysisGraph from './../components/SentimentAnalysisGraph';
+import SentimentAnalysisGraph from './../components/SentimentAnalysisGraph'
 
 const Results = () => (
 	<div>

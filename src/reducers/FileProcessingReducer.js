@@ -13,10 +13,8 @@ const initialState = {
 }
 
 export default function fileProcessingReducer(state = initialState, action){
-	//console.log("File!");
 	switch(action.type) {
 		case ActionTypes.UPLOAD_START:
-			console.log("Upload Start");
 			state.viewState = viewTypes.PROCESSING;
 			return state;
 		case ActionTypes.UPLOAD_SUCCESS:

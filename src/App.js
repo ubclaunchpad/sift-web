@@ -9,18 +9,15 @@ import ViewTypes from './actions/ViewTypes';
 // Possibly, need to switch on state viewstate
 
 const App = ({viewState}) => {
-	console.log('app');
 	let ViewComponent = null;
-	console.log(store.getState().fileProcessing.viewState);
 	switch (store.getState().fileProcessing.viewState) {
-		case "FORM":
+		case ViewTypes.FORM:
 			ViewComponent = UploadForm;
 			break;
-		case "PROCESSING":
-			console.log("Processing!");
+		case ViewTypes.PROCESSING:
 			ViewComponent = null;
 			break;
-		case "RESULTS":
+		case ViewTypes.RESULTS:
 			ViewComponent = Results;
 			break;
 		default:
