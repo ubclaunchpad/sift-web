@@ -1,18 +1,16 @@
 import Button from './../components/Button';
 import ConceptInput from './../components/ConceptInput';
 import DropArea from './../components/DropArea';
-import ProgressIndicator from './../components/ProgressIndicator';
 import React from 'react';
-import SentimentAnalysisGraph from './../components/SentimentAnalysisGraph';
 
 const UploadForm = () => (
-	<div>
-		<DropArea />
-		<Button />
-		<ConceptInput />
-		<SentimentAnalysisGraph />
-		<ProgressIndicator />
-	</div>
+  <div>
+    <h1> Sift </h1>
+    <h2> A simple review <span> aggregator</span> app. </h2>
+    <DropArea />
+    <Button />
+    <ConceptInput />
+  </div>
 );
 
 UploadForm.displayName = 'UploadForm';
